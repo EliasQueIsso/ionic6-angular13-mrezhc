@@ -3,23 +3,24 @@
     <h2 align="center">Simulador de Empréstimos</h2>
     <ion-item>
       <ion-label position="floating">Valor do Empréstimo</ion-label>
-      <ion-input type="number"></ion-input>
+      <ion-input type="number" [(ngModel)]="valorEmprestimo"></ion-input>
     </ion-item>
     <ion-item>
       <ion-label position="floating">Taxa de Juros</ion-label>
-      <ion-input type="number"></ion-input>
+      <ion-input type="number" [(ngModel)]="taxaJuros"></ion-input>
     </ion-item>
     <ion-item>
       <ion-label position="floating">Parcelas</ion-label>
-      <ion-input type="number"></ion-input>
+      <ion-input type="number" [(ngModel)]="Parcelas"></ion-input>
     </ion-item>
-    <ion-button color="success" expand="block">
+    <ion-button color="success" expand="block" (click)="simularEmprestimo()">
       <font color="black">
         <ion-icon name="cash-outline"></ion-icon>
         Simular Empréstimo
       </font>
     </ion-button>
-    <ion-label position="floating"></ion-label>
-    <ion-label position="floating"></ion-label>
+    <ion-label>Valor Final: {{ valorFinal }}</ion-label
+    ><br />
+    <ion-label>Valor Prestação: {{ valorPrestacao }}</ion-label>
   </ion-content>
 </ion-app>
