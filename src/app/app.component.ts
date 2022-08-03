@@ -6,9 +6,25 @@ import { Component, VERSION } from '@angular/core';
   styleUrls: ['./app.component.css'],
 })
 export class AppComponent {
-  name = 'Ionic 6 Angular ' + VERSION.major;
+  valorEmprestimo: number;
+  taxaJuros: number;
+  Parcelas: number;
+  valorFinal: number;
+  valorPrestacao: number;
 
   constructor() {}
+
+  simularEmprestimo()
+  {
+    let i=1;
+    this.taxaJuros=(this.taxaJuros/100)+1;
+    this.valorFinal=this.valorEmprestimo;
+    while(i<=this.Parcelas){
+      this.valorFinal=this.valorFinal*this.taxaJuros;
+      i++
+    }
+    this.valorPrestacao=this.valorFinal/this.Parcelas;
+  }
 
   ionViewDidEnter() {}
 }
